@@ -12,7 +12,7 @@
     <url>https://github.com/devzwy/AsktaoPackageDataHelper</url>
     <groupId>io.github.devzwy</groupId>
     <artifactId>asktao_data_helper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -26,6 +26,13 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
