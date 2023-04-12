@@ -17,3 +17,25 @@
 ```
 src/test/java/io/github/devzwy/ExtKtTest.kt
 ```
+
+```
+/**
+     * 对明文的密码加密
+     */
+    fun encryptGamePassword(account: String, password: String) =
+        Md5Utils.hash("${account}${Md5Utils.hash(password).uppercase()}20070201").uppercase()
+
+    /**
+     * 计算账号表签名
+     * [account] 传入明文账号
+     * [encryptPassword] 加密后的密码
+     * [privilege] 权限
+     * [goldCoin] 金元宝数量
+     * [silverCoin] 银元宝数量
+     */
+    fun getAccountCheckSum(account: String, encryptPassword: String, privilege: Long, goldCoin: Long, silverCoin: Long) = Md5Utils.hash(
+        "${account}${encryptPassword}${toHexStr(privilege)}${toHexStr(goldCoin)}${
+            toHexStr(silverCoin)
+        }ABCDEF"
+    ).uppercase()
+```
